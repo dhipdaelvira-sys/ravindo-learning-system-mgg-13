@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAVINDO | Minggu 13: Integrasi Sistem Kelistrikan & Automasi</title>
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #ff6d00;
+      --light: #e3f2fd;
+      --dark: #01579b;
+      --danger: #d32f2f;
+      --success: #2e7d32;
+      --text: #212121;
+      --bg: #f5f9ff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    header {
+      background: linear-gradient(to right, var(--primary), var(--dark));
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin: 25px 0 15px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--light);
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin: 20px 0 12px;
+      color: var(--dark);
+    }
+    p, ul, ol {
+      margin-bottom: 16px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      background-color: #fff8e1;
+      padding: 16px;
+      border-left: 4px solid var(--secondary);
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .pillar {
+      display: flex;
+      gap: 16px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+    .pillar-card {
+      flex: 1;
+      min-width: 200px;
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+      border-top: 4px solid;
+    }
+    .head { border-color: #2196f3; }
+    .hand { border-color: #4caf50; }
+    .heart { border-color: #f44336; }
+    .habit { border-color: #9c27b0; }
+    .pillar-card h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    pre {
+      background: #263238;
+      color: #eeeeee;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+    .story {
+      background: #f9f9f9;
+      border-left: 4px solid var(--danger);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .story h4 {
+      color: var(--danger);
+      margin-bottom: 12px;
+    }
+    .regulation-box {
+      background: #f3e5f5;
+      border-left: 4px solid #9c27b0;
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .regulation-box h4 {
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+    .resource-box {
+      background: #e3f2fd;
+      border: 2px solid #2196f3;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    .resource-box h4 {
+      color: #0d47a1;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .resource-list {
+      list-style: none;
+      padding: 0;
+    }
+    .resource-list li {
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .resource-list li::before {
+      content: "🔗";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .resource-list a {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--dark);
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      .container { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 RAVINDO MARITIME LEARNING SYSTEM</h1>
+      <p>Semester 2: Sistem Kelistrikan Kapal & Kontrol Automasi<br>Universitas Hang Tuah (UHT)</p>
+      <h2 style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">⚙️ MINGGU 13: INTEGRASI SISTEM KELISTRIKAN & AUTOMASI</h2>
+      <p><em>"Bagaimana Listrik, Kontrol, dan Monitoring Bekerja sebagai Satu Tubuh?"</em></p>
+    </header>
+
+    <main style="padding: 25px;">
+      <section>
+        <h2>1️⃣ IDENTITAS MODUL</h2>
+        <p><strong>Sesuai SMME314 – Pirireis University:</strong><br>
+        “Preparation of the ship for sailing. Loading of main engine, monitoring and verification of parameters. Commissioning of turbo generator and scrubber.”</p>
+        <p><strong>Sesuai Auto-2 Scribd:</strong><br>
+        “SCADA, HMI, data acquisition, integrated control systems”</p>
+        <p><strong>Semester/Level:</strong> Semester 2 – Sistem Kelistrikan Kapal & Kontrol Automasi<br>
+        <strong>Minggu:</strong> 13 dari 16<br>
+        <strong>Judul Modul:</strong> Integrasi Sistem Kelistrikan & Automasi<br>
+        <strong>Judul Sederhana:</strong> "Satu Tubuh, Satu Jiwa"<br>
+        <strong>Durasi Belajar Mandiri:</strong> 12 jam<br>
+        <strong>Durasi Kelas:</strong> 4 jam (simulasi TechSim 5000)</p>
+
+        <p><strong>Fokus Minggu Ini:</strong><br>
+        Kamu akan belajar bagaimana **generator, PLC, sensor, alarm, dan HMI** bekerja bersama sebagai satu sistem terpadu.</p>
+      </section>
+
+      <section class="resource-box">
+        <h4>📁 MEDIA PEMBELAJARAN</h4>
+        <ul class="resource-list">
+          <li><a href="https://www.youtube.com/watch?v=9G0iJkXyY7c" target="_blank">▶ Simulasi Integrasi Sistem di TechSim 5000</a></li>
+          <li><a href="https://www.youtube.com/watch?v=LmR8ZxW2j4c" target="_blank">▶ Cara Kerja HMI di Kapal Modern</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1ABC123_minggu13_ravindo_uht" target="_blank">📄 Slide & Latihan: Integrated Automation Systems</a></li>
+        </ul>
+      </section>
+
+      <section class="regulation-box">
+        <h4>📚 LITERATUR NASIONAL & INTERNASIONAL</h4>
+        <p><strong>Internasional:</strong><br>
+        • IMO MSC.1/Circ.1341: Guidelines on integrated automation systems<br>
+        • IACS Unified Requirement E10: Integrated safety-related systems<br>
+        • TechSim 5000 Manual v8.6 (Pirireis University)<br>
+        • DNV GL Rules for Ships: Chapter 6 – Automation</p>
+        <p><strong>Nasional:</strong><br>
+        • BKI Rules 2023 – Bab 5: Sistem Terpadu Kelistrikan & Kontrol<br>
+        • Buku Ajar: <em>Sistem Automasi Terpadu Kapal</em> – Politeknik Ilmu Pelayaran Semarang</p>
+      </section>
+
+      <section>
+        <h2>2️⃣ TUJUAN PEMBELAJARAN</h2>
+        <p>Setelah minggu ini, kamu <strong>HARUS BISA:</strong></p>
+
+        <h3>A. Pengetahuan (Kamu TAHU):</h3>
+        <ol>
+          <li>Menjelaskan arsitektur sistem terpadu: generator → switchboard → PLC → HMI</li>
+          <li>Memahami peran **HMI (Human-Machine Interface)** dan **SCADA** di kapal</li>
+          <li>Menjelaskan alur data dari sensor ke tampilan jembatan komando</li>
+        </ol>
+
+        <h3>B. Keterampilan (Kamu BISA):</h3>
+        <ol>
+          <li>Mengoperasikan HMI simulator TechSim 5000</li>
+          <li>Membaca status sistem terpadu dalam satu layar</li>
+          <li>Menganalisis gangguan lintas sistem (misal: generator mati → pompa berhenti)</li>
+        </ol>
+
+        <h3>C. Sikap (Kamu PEDULI):</h3>
+        <ol>
+          <li>Tidak fokus hanya pada satu sistem — lihat gambaran besar</li>
+          <li>Selalu verifikasi data antar-sistem sebelum ambil keputusan</li>
+          <li>Rapi dalam mendokumentasikan insiden sistem terpadu</li>
+        </ol>
+
+        <h3>D. Kebiasaan (Kamu RUTIN):</h3>
+        <ol>
+          <li>Cek integrasi sistem tiap shift</li>
+          <li>Catat anomali lintas sistem di logbook</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>3️⃣ THE 4 PILLARS OF LEARNING (HELD)</h2>
+        <div class="pillar">
+          <div class="pillar-card head">
+            <h4>🧠 HEAD (35%) - Kamu Harus PAHAM</h4>
+            <p><strong>Arsitektur Sistem Terpadu:</strong></p>
+            <pre>1. Generator → listrik
+2. Switchboard → distribusi
+3. Sensor → kirim data (4-20 mA)
+4. PLC/DCS → proses logika
+5. HMI → tampilkan di layar
+6. Alarm → beri peringatan
+7. Aktuator → jalankan perintah</pre>
+          </div>
+
+          <div class="pillar-card hand">
+            <h4>🔧 HAND (30%) - Kamu Harus BISA</h4>
+            <p><strong>Operasi HMI di TechSim 5000:</strong></p>
+            <pre>• Layar utama: status generator
+• Tab "Alarm": daftar gangguan aktif
+• Tab "Trend": grafik suhu & tekanan
+• Tombol "Acknowledge": konfirmasi alarm
+• Tombol "Manual Override": ambil alih kontrol</pre>
+          </div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-card heart">
+            <h4>❤️ HEART (20%) - Kamu Harus PEDULI</h4>
+            <p><strong>Sikap Profesional:</strong></p>
+            <pre>• Sistem terpadu = tubuh kapal
+• Gangguan di satu bagian = efek ke seluruh tubuh
+• Jangan kerja silo — kolaborasi itu wajib
+• Dokumentasi = memori kolektif tim</pre>
+          </div>
+
+          <div class="pillar-card habit">
+            <h4>🔁 HABIT (15%) - Kamu Harus RUTIN</h4>
+            <p><strong>Rutinitas Integrasi:</strong></p>
+            <pre>☐ Cek sinkronisasi data tiap shift
+☐ Verifikasi alarm lintas sistem
+☐ Simpan screenshot saat insiden
+☐ Laporkan jika HMI lambat respons</pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4️⃣ MATERI INTI: SATU TUBUH, SATU JIWA</h2>
+        <p>Di kapal modern, **tidak ada sistem yang berdiri sendiri**. Semua saling terhubung:</p>
+        <ul>
+          <li>Jika **generator mati** → **pompa bilge berhenti** → **air tidak terkuras**</li>
+          <li>Jika **sensor suhu gagal** → **PLC salah baca** → **mesin overheat**</li>
+          <li>Jika **HMI error** → **engineer buta** → **keputusan salah**</li>
+        </ul>
+
+        <div class="highlight">
+          <p><strong>Apa Itu HMI?</strong><br>
+          HMI (Human-Machine Interface) adalah **layar sentuh** di ruang mesin atau jembatan yang menampilkan:<br>
+          - Status generator<br>
+          - Suhu & tekanan<br>
+          - Alarm aktif<br>
+          - Grafik tren operasional<br>
+          <strong>Ini adalah "dashboard" kapal!</strong></p>
+        </div>
+
+        <h3>Analogi Sederhana: Mobil Modern</h3>
+        <p>Mobil sekarang punya satu layar yang tampilkan:<br>
+        - Kecepatan<br>
+        - Suhu mesin<br>
+        - Tekanan ban<br>
+        - Peringatan oli<br>
+        Jika oli rendah, layar beri peringatan + bunyi.<br>
+        **Kapal bekerja persis seperti ini — tapi lebih kompleks!**</p>
+
+        <div class="story">
+          <h4>❤️ Cerita Nyata: Kapal Selamat Berkat HMI Terpadu</h4>
+          <p><strong>Kejadian:</strong><br>
+          Di kapal tanker, HMI menunjukkan suhu oli mesin naik perlahan. Engineer cek, ternyata pompa oli mulai lemah. Dia ganti sebelum mesin rusak.</p>
+          <p><strong>Pelajaran:</strong><br>
+          <strong>Sistem terpadu bukan kemewahan — itu perlindungan nyata.</strong><br>
+          Data yang terintegrasi = keputusan yang akurat = nyawa yang selamat.</p>
+        </div>
+
+        <h3>Latihan di Kelas:</h3>
+        <p>Kamu akan:<br>
+        - Gunakan simulator TechSim 5000<br>
+        - Operasikan HMI lengkap<br>
+        - Simulasi gangguan lintas sistem<br>
+        - Latihan ambil alih manual saat HMI error</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 RAVINDO MARITIME LEARNING SYSTEM | Universitas Hang Tuah (UHT)</p>
+      <p>⚓ Sistem yang Terintegrasi = Kapal yang Cerdas! 🔥</p>
+    </footer>
+  </div>
+</body>
+</html>
+
